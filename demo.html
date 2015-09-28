@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>On/Off Switch - DHTML Jquery script</title>
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/on-off-switch.js"></script>
+    <script type="text/javascript" src="js/on-off-switch-onload.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/on-off-switch.css"/>
+    <style type="text/css">
+        body {
+            font-family: arial;
+        }
+    </style>
+</head>
+<body>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- On-Off Switch -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-0714236485040063"
+     data-ad-slot="9480169716"
+     data-ad-format="auto"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<h1>Demo of On-Off-Switch</h1>
+
+<!-- Demo 1-->
+<h4>With text</h4>
+
+<div class="checkbox-container">
+    <input type="checkbox" id="on-off-switch" name="switch1" checked>
+</div>
+<div id="listener-text">
+
+</div>
+<script type="text/javascript">
+    new DG.OnOffSwitch({
+        el: '#on-off-switch',
+        textOn: 'Sync On',
+        textOff: 'Off',
+        listener:function(name, checked){
+            $("#listener-text").html("Listener called for " + name + ", checked: " + checked);
+        }
+    });
+</script>
+<!-- Demo 2-->
+<h4>Without text and by using &lt;input type="hidden"> instead of &lt;input type="checkbox"></h4>
+<div class="checkbox-container">
+    <!-- value="1" for checked, 0 for unchecked -->
+    <input type="hidden" id="on-off-switch-notext" value="0">
+</div>
+
+<script type="text/javascript">
+    new DG.OnOffSwitch({
+        el: '#on-off-switch-notext'
+    });
+</script>
+<!-- Demo 3 -->
+<h4>With custom color and size</h4>
+<div class="checkbox-container">
+
+    <input type="hidden" id="on-off-switch-custom" value="1">
+
+    <script type="text/javascript">
+        new DG.OnOffSwitch({
+            el: '#on-off-switch-custom',
+            height: 150,
+            trackColorOn:'#F57C00',
+            trackColorOff:'#666',
+            trackBorderColor:'#555',
+            textColorOff:'#fff',
+            textOn:'YES',
+            textOff:'NO'
+        });
+    </script>
+</div>
+<br>
+<!-- Demo 4 -->
+<div class="checkbox-container">
+    <input type="checkbox" id="on-off-switch-custom2" checked>
+</div>
+<script type="text/javascript">
+
+    new DG.OnOffSwitch({
+        el: '#on-off-switch-custom2',
+        height: 100,
+        trackColorOn:'#0288D1',
+        textOn:'Longer',
+        textOff:'No',
+    });
+
+</script>
+
+<!-- Demo 5 automatic onload -->
+<h4>These switches have been created automatically by class names</h4>
+<Table>
+    <tr>
+        <td><input type="checkbox" class="custom-switch" checked name="switch1"></td>
+        <td>Option One</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="custom-switch" name="switch1"></td>
+        <td>Option Two</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="custom-switch" name="switch1"></td>
+        <td>Option Three</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="custom-switch" checked name="switch1" data-textOn="ON" data-textOff="OFF"
+                   data-trackColorOn="#512DA8" data-trackColorOff="#616161" data-textColorOff="#fff"
+                   data-trackBorderColor="#555">
+        </td>
+        <td>Option Four with custom html attributes</td>
+    </tr>
+    <tr>
+        <td colspan="2" id="listener-text-table" style="font-size:0.8em"></td>
+    </tr>
+</Table>
+<div>
+</div>
+<script type="text/javascript">
+    /* General rules for all the switches in demo 5 */
+    new DG.OnOffSwitchAuto({
+        cls:'.custom-switch',
+        textOn:"YES",
+        height:35,
+        textOff:"NO",
+        textSizeRatio:0.35,
+        listener:function(name, checked){
+            document.getElementById("listener-text-table").innerHTML = "Switch " + name + " changed value to " + checked;
+        }
+    });
+</script>
+
+</body>
+</html>
