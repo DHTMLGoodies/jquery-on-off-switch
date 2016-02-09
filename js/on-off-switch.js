@@ -3,6 +3,8 @@
  */
 if (!DG)var DG = {};
 
+
+DG.switches = {};
 DG.OnOffSwitchProperties = ["textOn", "textOff", "width", "height", "trackColorOn", "trackColorOff",
     "textColorOn", "textColorOff", "listener", "trackBorderColor", "textSizeRatio"];
 DG.OnOffSwitch = function (config) {
@@ -10,6 +12,7 @@ DG.OnOffSwitch = function (config) {
         this.inputEl = $(config.el);
 
         this.name = this.inputEl.attr("name");
+        DG.switches[this.name] = this;
         var t = this.inputEl.attr("type");
         this.isCheckbox = t && t.toLowerCase() == "checkbox";
         if(this.isCheckbox){
@@ -26,10 +29,10 @@ DG.OnOffSwitch = function (config) {
             this[properties[i]] = config[properties[i]];
         }
     }
-
-
     this.render();
 };
+
+
 
 $.extend(DG.OnOffSwitch.prototype, {
 
@@ -93,6 +96,8 @@ $.extend(DG.OnOffSwitch.prototype, {
         this.el = $('<div class="on-off-switch" style="width:' + this.width + 'px;height:' + this.height + 'px"></div>');
         this.inputEl.after(this.el);
 
+        this.inputEl.on("change", this.listenToClickEvent.bind(this));
+
         this.renderTrack();
         this.renderThumb();
 
@@ -105,6 +110,15 @@ $.extend(DG.OnOffSwitch.prototype, {
         this.addEvents();
     },
 
+    listenToClickEvent : function(){
+
+        if (this.inputEl.is(':checked')) {
+            if(!this.checked)this.toggle();
+        }else{
+            if(this.checked)this.toggle();
+        }
+
+    },
 
     addEvents: function () {
 
