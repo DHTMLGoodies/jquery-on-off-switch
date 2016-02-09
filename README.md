@@ -32,7 +32,8 @@ JQuery based on-off switch for websites
         }
     });
 </script>
-```HTML
+
+```
 
 
 ### 2a Auto create switchces
@@ -42,8 +43,7 @@ Then assign the checkboxes to the css class custom-switch.
 
 ```HTML
     <input type="checkbox" class="custom-switch" name="checkbox1" id="checkbox1">
-``
-`
+```
 ###Methods
 
 The following public methods are available:
