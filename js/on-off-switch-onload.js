@@ -12,7 +12,6 @@ DG.OnOffSwitchAuto = function (config) {
             for(var i=0,len=els.length;i<len;i++){
                 var elementConfig = jQuery.extend({}, config);
                 var el = $(els[i]);
-                console.log(els[i].id);
                 if(!els[i].id){
                     els[i].id = "dg-switch-" + index;
                     index++;

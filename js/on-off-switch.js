@@ -11,8 +11,10 @@ DG.OnOffSwitch = function (config) {
     if (config.el != undefined) {
         this.inputEl = $(config.el);
 
+
         this.name = this.inputEl.attr("name");
         DG.switches[this.name] = this;
+        DG.switches["#" + this.inputEl.attr("id")] = this;
         var t = this.inputEl.attr("type");
         this.isCheckbox = t && t.toLowerCase() == "checkbox";
         if(this.isCheckbox){
