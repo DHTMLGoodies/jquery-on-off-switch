@@ -6,16 +6,16 @@ JQuery based on-off switch for websites
 
 ###1. Include code in <head>
 
-´´´HTML
+```HTML
   <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="js/on-off-switch.js"></script>
     <script type="text/javascript" src="js/on-off-switch-onload.js"></script>
     <link rel="stylesheet" type="text/css" href="css/on-off-switch.css"/>
-´´´
+```
 
 ###2a Create Switch manually
 
-´´´HTML
+```HTML
 <div class="checkbox-container">
     <input type="checkbox" id="on-off-switch" name="switch1" checked>
 </div>
@@ -32,7 +32,7 @@ JQuery based on-off switch for websites
         }
     });
 </script>
-´´´HTML
+```HTML
 
 
 ### 2a Auto create switchces
@@ -40,10 +40,10 @@ This done by including the on-off-switch-onload.js file in the <head>.
 
 Then assign the checkboxes to the css class custom-switch.
 
-´´´HTML
+```HTML
     <input type="checkbox" class="custom-switch" name="checkbox1" id="checkbox1">
-´´
-
+``
+`
 ###Methods
 
 The following public methods are available:
@@ -62,9 +62,9 @@ object.
 
 Example
 
-´´´Javascript
+```Javascript
 DG.switches("#checkbox1").check();
-´´´
+```
 
 or by name
 
