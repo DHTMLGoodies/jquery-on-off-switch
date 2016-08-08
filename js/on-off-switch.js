@@ -292,7 +292,7 @@ $.extend(DG.OnOffSwitch.prototype, {
 
     drag: function (e) {
         if (!this.isDragging) {
-            return false;
+            return true;
         }
 
         this.hasBeenDragged = true;
