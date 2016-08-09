@@ -320,7 +320,7 @@ $.extend(DG.OnOffSwitch.prototype, {
     },
 
     endDrag: function () {
-        if (!this.isDragging)return false;
+        if (!this.isDragging)return true;
 
         if (!this.hasBeenDragged) {
             this.toggle();
