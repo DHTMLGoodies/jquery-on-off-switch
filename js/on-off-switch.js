@@ -285,7 +285,7 @@ $.extend(DG.OnOffSwitch.prototype, {
 
         this.startCoordinates = {
             x: this.getX(e),
-            elX: position.left,
+            elX: position.left
         };
         return false;
     },
